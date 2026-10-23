@@ -5,6 +5,6 @@ Site de présentation de **Après-Vol**, l'app iOS qui enregistre les vols VFR a
 - `index.html` : page d'accueil (FR / EN)
 - `privacy/` : politique de confidentialité (source : `docs/privacy/index.html` du dépôt de l'app)
 
-Soutenir le projet : https://buymeacoffee.com/chocksoff
+Soutenir le projet : https://buymeacoffee.com/apresvol
 
 Publié par GitHub Pages depuis `main`. Domaine `apresvol.aero` à brancher (fichier `CNAME` + DNS) quand le domaine est enregistré.
