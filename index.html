@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chocks Off – Carnet de vol automatique</title>
+<meta name="description" content="Chocks Off enregistre vos vols VFR automatiquement grâce au GPS de l'iPhone, pendant que votre app de navigation reste au premier plan. Gratuit, open source, sans compte.">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+  :root { --bg: #ffffff; --fg: #1d1d1f; --muted: #6e6e73; --line: #d2d2d7; --card: #f5f5f7; --accent: #0066cc; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #000000; --fg: #f5f5f7; --muted: #a1a1a6; --line: #424245; --card: #1c1c1e; --accent: #2997ff; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+         font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif; }
+  main { max-width: 46rem; margin: 0 auto; padding: 1.5rem 1rem 4rem; }
+  a { color: var(--accent); }
+  .lang { text-align: right; font-size: .95rem; }
+  .lang button { background: none; border: 0; padding: .25rem .4rem; font: inherit; color: var(--muted); cursor: pointer; }
+  .lang button[aria-pressed="true"] { color: var(--fg); font-weight: 600; }
+  header { text-align: center; padding: 2rem 0 1rem; }
+  header img { width: 112px; height: 112px; border-radius: 25px; box-shadow: 0 6px 24px rgba(0,0,0,.18); }
+  h1 { font-size: 2.6rem; line-height: 1.1; margin: 1.25rem 0 .25rem; letter-spacing: -.02em; }
+  .tagline { font-size: 1.3rem; color: var(--muted); margin: 0 0 1rem; }
+  .lead { font-size: 1.1rem; max-width: 36rem; margin: 0 auto; }
+  .badges { display: flex; flex-wrap: wrap; gap: .5rem; justify-content: center; margin: 1.5rem 0 0; padding: 0; list-style: none; }
+  .badges li { border: 1px solid var(--line); border-radius: 999px; padding: .2rem .8rem; font-size: .9rem; color: var(--muted); }
+  h2 { font-size: 1.4rem; margin: 3rem 0 1rem; }
+  .steps { display: grid; gap: .75rem; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); padding: 0; margin: 0; list-style: none; counter-reset: s; }
+  .steps li { background: var(--card); border-radius: 14px; padding: 1rem 1.1rem; counter-increment: s; }
+  .steps li::before { content: counter(s); display: inline-grid; place-items: center; width: 1.7rem; height: 1.7rem; border-radius: 50%;
+                      background: var(--accent); color: #fff; font-weight: 700; font-size: .9rem; margin-bottom: .5rem; }
+  .steps strong { display: block; }
+  ul.features { padding-left: 1.2rem; }
+  ul.features li { margin: .35rem 0; }
+  .note { border: 1px solid var(--line); border-radius: 12px; padding: .9rem 1.1rem; }
+  .muted { color: var(--muted); }
+  footer { margin-top: 3.5rem; padding-top: 1.25rem; border-top: 1px solid var(--line); font-size: .9rem; color: var(--muted); }
+  [hidden] { display: none !important; }
+</style>
+</head>
+<body>
+<main>
+
+<div class="lang" role="group" aria-label="Langue / Language">
+  <button type="button" data-lang="fr" aria-pressed="true">Français</button>·<button type="button" data-lang="en" aria-pressed="false">English</button>
+</div>
+
+<header>
+  <img src="icon.png" alt="">
+  <h1>Chocks Off</h1>
+  <p class="tagline">Fly first. Log automatically.</p>
+</header>
+
+<!-- Français -->
+<section lang="fr" data-section="fr">
+  <p class="lead">Une petite app iOS qui enregistre vos vols VFR à partir du GPS de l'iPhone, pendant que SkyDemon (ou toute autre app de navigation) reste au premier plan. Après l'atterrissage, vous relisez, vous validez, et le vol est prêt pour votre carnet.</p>
+  <ul class="badges"><li>Gratuit</li><li>Open source</li><li>Sans compte</li><li>Données sur l'appareil</li></ul>
+
+  <h2>Comment ça marche</h2>
+  <ol class="steps">
+    <li><strong>Démarrer</strong>Au pied de l'avion, un seul bouton. Puis passez sur votre app de navigation.</li>
+    <li><strong>Voler</strong>En arrière-plan, l'app détecte le décollage, les atterrissages et les aérodromes.</li>
+    <li><strong>Valider</strong>Relisez les heures, complétez l'équipage, l'essence ou l'horodateur, et validez.</li>
+  </ol>
+
+  <h2>Ce que l'app enregistre</h2>
+  <ul class="features">
+    <li>Heures de décollage et d'atterrissage, temps de vol, nombre d'atterrissages (touch-and-go compris), distance parcourue.</li>
+    <li>Aérodromes de départ et d'arrivée détectés hors ligne : Europe (code OACI) et plateformes ULM françaises.</li>
+    <li>Carnet pilote et carnet de route de l'avion : horodateur, essence, huile, prochaine visite, remarques.</li>
+    <li>Fonction à bord, nature du vol, passagers ; trace GPS du vol, affichée sur une carte.</li>
+    <li>Exports : fichier d'import Carnet.aero, CSV complet, carnet de route par avion, traces GPX.</li>
+    <li>Avis de vol à La Côte (LSGP), en option.</li>
+  </ul>
+  <p class="note">Chocks Off aide à tenir le carnet de vol, ce n'est pas une aide à la navigation. Les valeurs détectées peuvent être fausses : le pilote reste responsable de les vérifier.</p>
+
+  <h2>Vos données restent chez vous</h2>
+  <p>Pas de compte, pas de serveur, pas de publicité ni de suivi. Les vols et la position GPS restent sur votre iPhone ; un fichier ne sort que lorsque vous l'exportez. <a href="privacy/">Politique de confidentialité</a>.</p>
+
+  <h2>Essayer la bêta</h2>
+  <p>Chocks Off est en test sur TestFlight (iPhone avec iOS 26.2 ou plus récent). Pour rejoindre la bêta, <a href="mailto:antoine@fatio.net?subject=Chocks%20Off%20-%20b%C3%AAta">écrivez-moi</a>.</p>
+
+  <h2>Open source</h2>
+  <p>L'app est un projet personnel, sans but commercial. Le code sera publié en open source après les premiers vols de validation. Si elle vous fait gagner du temps, vous pourrez bientôt m'offrir un café.</p>
+</section>
+
+<!-- English -->
+<section lang="en" data-section="en" hidden>
+  <p class="lead">A small iOS app that logs your VFR flights from the iPhone's GPS while SkyDemon (or any other navigation app) stays in the foreground. After landing, you review, you confirm, and the flight is ready for your logbook.</p>
+  <ul class="badges"><li>Free</li><li>Open source</li><li>No account</li><li>Data stays on device</li></ul>
+
+  <h2>How it works</h2>
+  <ol class="steps">
+    <li><strong>Start</strong>One button, next to the aircraft. Then switch to your navigation app.</li>
+    <li><strong>Fly</strong>In the background, the app detects takeoff, landings and aerodromes.</li>
+    <li><strong>Confirm</strong>Check the times, add crew, fuel or Hobbs, and confirm the flight.</li>
+  </ol>
+
+  <h2>What it logs</h2>
+  <ul class="features">
+    <li>Takeoff and landing times, flight time, number of landings (touch-and-go included), distance flown.</li>
+    <li>Departure and arrival aerodromes detected offline: Europe (ICAO code) and French microlight fields.</li>
+    <li>Pilot logbook and aircraft journey log: Hobbs, fuel, oil, next inspection, remarks.</li>
+    <li>Crew function, flight type, passengers; GPS track of the flight, shown on a map.</li>
+    <li>Exports: Carnet.aero import file, full CSV, journey log per aircraft, GPX tracks.</li>
+    <li>Optional flight notice at La Côte aerodrome (LSGP).</li>
+  </ul>
+  <p class="note">Chocks Off helps you keep your logbook; it is not a navigation aid. Detected values can be wrong: the pilot remains responsible for checking them.</p>
+
+  <h2>Your data stays with you</h2>
+  <p>No account, no server, no ads, no tracking. Flights and GPS positions stay on your iPhone; a file only leaves it when you export it. <a href="privacy/#en">Privacy policy</a>.</p>
+
+  <h2>Try the beta</h2>
+  <p>Chocks Off is being tested on TestFlight (iPhone with iOS 26.2 or later). To join the beta, <a href="mailto:antoine@fatio.net?subject=Chocks%20Off%20beta">send me an e-mail</a>.</p>
+
+  <h2>Open source</h2>
+  <p>The app is a personal, non-commercial project. The code will be published as open source after the first validation flights. If it saves you time, you will soon be able to buy me a coffee.</p>
+</section>
+
+<footer>
+  Chocks Off · <span data-section="fr">par Antoine Fatio, pilote privé à La Côte (LSGP), Suisse</span><span data-section="en" hidden>by Antoine Fatio, private pilot at La Côte (LSGP), Switzerland</span> · <a href="mailto:antoine@fatio.net">antoine@fatio.net</a>
+</footer>
+
+</main>
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.lang button');
+    function show(lang) {
+      document.documentElement.lang = lang;
+      document.querySelectorAll('[data-section]').forEach(function (el) { el.hidden = el.dataset.section !== lang; });
+      buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.lang === lang)); });
+      try { localStorage.setItem('lang', lang); } catch (e) {}
+    }
+    var saved = null;
+    try { saved = localStorage.getItem('lang'); } catch (e) {}
+    var lang = saved || (location.hash === '#en' || !/^fr/i.test(navigator.language || '') ? 'en' : 'fr');
+    show(lang);
+    buttons.forEach(function (b) { b.addEventListener('click', function () { show(b.dataset.lang); }); });
+  })();
+</script>
+</body>
+</html>
