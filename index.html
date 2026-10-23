@@ -37,6 +37,9 @@
   ul.features li { margin: .35rem 0; }
   .note { border: 1px solid var(--line); border-radius: 12px; padding: .9rem 1.1rem; }
   .muted { color: var(--muted); }
+  .cta { display: inline-block; margin-top: .25rem; padding: .65rem 1.2rem; border-radius: 999px; background: var(--accent); color: #fff;
+         font-weight: 600; text-decoration: none; }
+  .cta:hover { filter: brightness(1.08); }
   .coffee { display: inline-block; margin-top: .5rem; padding: .65rem 1.2rem; border-radius: 999px; background: #FFDD00; color: #000;
             font-weight: 600; text-decoration: none; }
   .coffee:hover { filter: brightness(.95); }
@@ -84,7 +87,13 @@
   <p>Pas de compte, pas de serveur, pas de publicité ni de suivi. Les vols et la position GPS restent sur votre iPhone ; un fichier ne sort que lorsque vous l'exportez. <a href="privacy/">Politique de confidentialité</a>.</p>
 
   <h2>Essayer la bêta</h2>
-  <p>Chocks Off est en test sur TestFlight (iPhone avec iOS 26.2 ou plus récent). Pour rejoindre la bêta, <a href="mailto:antoine@fatio.net?subject=Chocks%20Off%20-%20b%C3%AAta">écrivez-moi</a>.</p>
+  <p>Chocks Off est en test sur TestFlight, l'app d'Apple pour les versions bêta. Il faut un iPhone avec iOS 26.2 ou plus récent.</p>
+  <ol>
+    <li>Installez <a href="https://apps.apple.com/app/testflight/id899247664">TestFlight</a> depuis l'App Store.</li>
+    <li>Sur l'iPhone, ouvrez le lien ci-dessous et touchez « Accepter », puis « Installer ».</li>
+  </ol>
+  <p><a class="cta" href="https://testflight.apple.com/join/6Qazm4Nd" rel="noopener">Rejoindre la bêta sur TestFlight</a></p>
+  <p class="muted">Vos retours sont les bienvenus : capture d'écran dans TestFlight, ou <a href="mailto:antoine@fatio.net?subject=Chocks%20Off%20-%20b%C3%AAta">par e-mail</a>.</p>
 
   <h2>Open source</h2>
   <p>L'app est un projet personnel, sans but commercial. Le code sera publié en open source après les premiers vols de validation. Si elle vous fait gagner du temps après l'atterrissage, un café m'aide à la garder gratuite et à jour.</p>
@@ -118,7 +127,13 @@
   <p>No account, no server, no ads, no tracking. Flights and GPS positions stay on your iPhone; a file only leaves it when you export it. <a href="privacy/#en">Privacy policy</a>.</p>
 
   <h2>Try the beta</h2>
-  <p>Chocks Off is being tested on TestFlight (iPhone with iOS 26.2 or later). To join the beta, <a href="mailto:antoine@fatio.net?subject=Chocks%20Off%20beta">send me an e-mail</a>.</p>
+  <p>Chocks Off is being tested on TestFlight, Apple's app for beta versions. You need an iPhone with iOS 26.2 or later.</p>
+  <ol>
+    <li>Install <a href="https://apps.apple.com/app/testflight/id899247664">TestFlight</a> from the App Store.</li>
+    <li>On the iPhone, open the link below and tap "Accept", then "Install".</li>
+  </ol>
+  <p><a class="cta" href="https://testflight.apple.com/join/6Qazm4Nd" rel="noopener">Join the beta on TestFlight</a></p>
+  <p class="muted">Feedback is welcome: screenshot in TestFlight, or <a href="mailto:antoine@fatio.net?subject=Chocks%20Off%20beta">by e-mail</a>.</p>
 
   <h2>Open source</h2>
   <p>The app is a personal, non-commercial project. The code will be published as open source after the first validation flights. If it saves you time after landing, a coffee helps me keep it free and up to date.</p>
