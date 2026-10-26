@@ -7,4 +7,4 @@ Site de présentation de **Après-Vol**, l'app iOS qui enregistre les vols VFR a
 
 Soutenir le projet : https://buymeacoffee.com/apresvol
 
-Publié par GitHub Pages depuis `main`. Domaine `apresvol.aero` à brancher (fichier `CNAME` + DNS) quand le domaine est enregistré.
+Publié par GitHub Pages depuis `main`. Domaine : https://apresvol.aero (fichier `CNAME`, DNS chez Infomaniak : 4 A GitHub Pages + CNAME www).
